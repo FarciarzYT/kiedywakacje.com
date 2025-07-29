@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 export default function HeroText() {
     return (
         <>
-            <div className="z-10 text-outline text-center font-lato">
+            <div className="z-10 text-outline text-center font-lato select-none pt-6">
                 <header>
                     <motion.div
                         initial={{opacity: 0, scale: 0.5}}

@@ -11,7 +11,7 @@ export default function HomePage() {
     return (
         <>
             <AnimatedBackground/>
-            <main className="flex flex-col items-center justify-center min-h-screen px-4 py-12 text-black dark:bg-black dark:text-white  font-Helvetica">
+            <main className="flex flex-col items-center justify-center px-4 py-12 text-black dark:text-white min-h-[100vh]">
                 <HeroText/>
                 <HeroButtons/>
                 <ThemeToogle/>

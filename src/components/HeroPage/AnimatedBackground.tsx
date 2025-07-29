@@ -7,16 +7,13 @@ export default function AnimatedBackground() {
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 1024 768"
             preserveAspectRatio="xMidYMid meet"
-            className="absolute top-0 left-0 w-full h-full z-0 pointer-events-none invert-0 dark:invert transition "
-            transform="scale(1.2)"
+            className="absolute top-0 left-0 sm:w-full  h-full w-full z-0 invert-0 dark:invert pointer-events-none"
+            transform="sm:scale(1.2)"
 
         >
             {/* Mountains */}
             <motion.g
                 id="mountains"
-                initial={{ pathLength: 0 }}
-                animate={{ pathLength: 2 }}
-                transition={{ duration: 3 }}
                 fill="none"
                 stroke="black"
                 strokeWidth={1}
@@ -175,8 +172,6 @@ export default function AnimatedBackground() {
             {/*Moon*/}
             <motion.g
                 id="moon"
-                initial={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 1, duration: 2 }}
                 fill="black"
                 stroke="#eaa203"
                 className="z-0 hidden dark:block"
@@ -309,8 +304,6 @@ export default function AnimatedBackground() {
             {/* Sun */}
             <motion.g
                 id="sun"
-                initial={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 1, duration: 2 }}
                 fill="black"
                 stroke="#eaa203"
                 className="z-0 block dark:hidden"
@@ -544,8 +537,6 @@ export default function AnimatedBackground() {
             {/* Sunbed */}
             <motion.g
                 id="sunbed"
-                initial={{ opacity: 1 }}
-                transition={{ delay: 2, duration: 1 }}
                 fill="black"
                 stroke="black"
             >
@@ -855,9 +846,6 @@ export default function AnimatedBackground() {
             {/* Water */}
             <motion.g
                 id="water"
-                initial={{ pathLength: 0 }}
-                animate={{ pathLength: 1 }}
-                transition={{ duration: 5 }}
                 fill="none"
                 stroke="black"
                 strokeWidth={0.5}

@@ -14,6 +14,7 @@ export function HomeToggle() {
 
     return (
         <Button
+            title="about page"
             variant="outline"
             size="icon"
             className="rounded-full mt-4 absolute top-4 right-16 z-20 transition-all duration-300"

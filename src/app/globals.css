@@ -3,9 +3,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
-body {
-  overflow: hidden;
-}
 
 .text-bordered {
   -webkit-text-stroke-width: 2px;
@@ -51,6 +48,7 @@ body {
 
 #light_background path {
   fill: none;
+  overflow-x : hidden;
 /*  stroke: #000000;*/
   stroke-width: 1.4;
   stroke-linecap: round;
@@ -63,6 +61,7 @@ body {
 }
 
 
+/*
 #light_background path{
   stroke-dasharray: 9000;
   stroke-dashoffset: 9000;
@@ -74,6 +73,7 @@ body {
     stroke-dashoffset: 0;
   }
 }
+*/
 
 
 

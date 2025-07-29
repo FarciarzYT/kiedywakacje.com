@@ -1,10 +1,11 @@
 import "./globals.css"
 import {ThemeProvider} from "next-themes"
+import { Analytics } from "@vercel/analytics/next"
 import React from "react";
 
 export const metadata = {
     title: 'Odliczanie do zasłużonego Odpoczynku - kiedywakacje.com',
-    description: 'Sprawdź wakacje, ferie, weekend, Sylwester. Ale tylko jeśli zasłużyłeś. Odpoczynek to luksus, nie prawo. STAY HARD.',
+    description: 'Nie możesz doczekać się już wakacji? tutaj znajdziesz precyzyjne odliczanie do końca roku szkolnego, ferii zimowych i innych dni wolnych! Sprawdź, ile dokładnie dni, godzin i minut pozostało do upragnionego odpoczynku',
     keywords: [
         'Odliczanie', 'do', 'wakacji', 'końca', 'roku', 'szkolnego',
         'wakacje', 'wolne', 'odpoczynek', 'ferie', 'zimowe',
@@ -20,7 +21,7 @@ export const metadata = {
     manifest: '/site.webmanifest',
     openGraph: {
         title: 'Odliczanie do zasłużonego Odpoczynku - kiedywakacje.com',
-        description: 'Sprawdź wakacje, ferie, weekend, Sylwester. Ale tylko jeśli zasłużyłeś. Odpoczynek to luksus, nie prawo. STAY HARD.',
+        description: 'Nie możesz doczekać się już wakacji? tutaj znajdziesz precyzyjne odliczanie do końca roku szkolnego, ferii zimowych i innych dni wolnych! Sprawdź, ile dokładnie dni, godzin i minut pozostało do upragnionego odpoczynku',
         url: 'https://kiedywakacje.com/',
         siteName: 'Kiedy Wakacje',
         images: [
@@ -41,8 +42,9 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
         <html lang="pl" suppressHydrationWarning>
-            <body>
-                <ThemeProvider attribute="class" enableSystem defaultTheme="system">{children}</ThemeProvider>
+            <body className="dark:bg-black sm:overflow-hidden">
+                <ThemeProvider attribute="class" enableSystem defaultTheme="system" >{children}</ThemeProvider>
+                <Analytics />
             </body>
         </html>
     );

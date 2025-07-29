@@ -28,7 +28,7 @@ export default function HeroButtons() {
     return (
         <>
             <div className="border-none rounded-lg px-8 py-6 text-center z-10 transition-all font-lato">
-                <p className="text-2xl font-medium text-black dark:text-gray-100 mb-2 text-outline">
+                <p className="text-2xl font-medium text-black dark:text-gray-100 mb-2 text-outline select-none">
                     Do {selectedEvent.label} pozostało
                 </p>
                 <span className="text-lg font-semibold dark:text-white mb-2 text-outline ">
@@ -73,16 +73,17 @@ export default function HeroButtons() {
                             animate={{opacity: 1, height: 'auto'}}
                             exit={{opacity: 0, height: 0}}
                             transition={{duration: 0.3}}
-                            className="flex flex-col gap-3 mt-4 w-full max-w-4xl font-lato"
+                            className="flex flex-col gap-3 mt-4 w-full max-w-4xl font-lato min-h-[45vh]"
                         >
                             {winterBreakGroups.map((group) => (
                                 <motion.button
+                                    title={group.id}
                                     key={group.id}
                                     onClick={() => handleWinterGroupSelect(group)}
                                     whileHover={{scale: 1.02}}
                                     className={`p-4 rounded-lg font-lato text-left transition-colors w-full ${selectedEvent.date.getTime() === group.date.getTime() ? 'bg-yellow-200 dark:bg-blue-800' : 'bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700'}`}
                                 >
-                                    <div className="font-bold text-lg font-lato">{group.title}</div>
+                                    <div className="font-bold text-lg font-lato ">{group.title}</div>
                                     <div className="text-sm font-light font-Inter">{group.provinces}</div>
                                 </motion.button>
                             ))}

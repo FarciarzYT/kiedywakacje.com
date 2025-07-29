@@ -23,13 +23,13 @@ export default function AlternateCountdown(props: { toDate: Date }) {
                     onConfettiComplete={() => setIsConfettiRunning(false)}
                     gravity={0.4}
                 />
-                <p className="text-xl font-medium md:text-4xl jumping-fix z-10 ">
+                <p className="text-xl font-medium md:text-4xl jumping-fix z-10 select-none">
                     🎉 Koniec odliczania, początek odpoczynku 🎉
                 </p>
             </>
         ) : (
             <>
-                <div className="flex items-center gap-6 font-lato jumping-fix  z-10 min-h-32 ">
+                <div className="flex items-center gap-6 font-lato jumping-fix  z-10 min-h-32 select-none">
                     <div className="flex flex-col items-center">
                         <span className="text-4xl font-semibold md:text-5xl font-mono"><NumberFlow  transformTiming={{ duration: 200, easing: 'ease-out' }} value={days}/></span>
                         <span className="text-lg font-light  z-10 ">dni</span>
@@ -51,7 +51,7 @@ export default function AlternateCountdown(props: { toDate: Date }) {
         )
     ) : (
         <>
-            <div className="flex items-center gap-6 font-lato jumping-fix  z-10 min-h-32 ">
+            <div className="flex items-center gap-6 font-lato jumping-fix  z-10 min-h-32 select-none">
                 <div className="flex flex-col items-center">
                     <span className="text-4xl font-semibold md:text-5xl font-mono">000</span>
                     <span className="text-lg font-light  z-10 ">dni</span>
