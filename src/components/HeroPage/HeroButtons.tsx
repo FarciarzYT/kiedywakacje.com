@@ -36,7 +36,7 @@ export default function HeroButtons() {
                 </span>
             </div>
             <div className="mt-8 z-10 flex flex-col justify-center items-center gap-4 transition-all duration-100">
-                <div className="flex flex-col justify-center items-center gap-4 sm:flex-row ">
+                <div className="flex flex-col justify-center items-center gap-4 lg:flex-row ">
                     {/*Summer Vibe Buttons*/}
                     {events.map((event) => (
                         <motion.button
@@ -47,11 +47,12 @@ export default function HeroButtons() {
                             }}
                             whileHover={{scale: 1.05}}
                             whileTap={{scale: 0.95}}
-                            className={`flex items-center justify-center gap-2 px-6 py-3 font-lato font-semibold rounded-full border-2 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 dark:focus:ring-offset-black min-w-54 border-yellow-300 text-black hover:bg-yellow-300 hover:text-black focus:ring-yellow-300 dark:border-blue-600 dark:text-white dark:hover:bg-blue-600 dark:hover:text-white dark:focus:ring-blue-600 ${selectedEvent.id === event.id ? 'bg-yellow-300 text-black dark:bg-blue-600 dark:text-white' : 'bg-white dark:bg-black'}`}>
+                            className={`flex items-center text-clip justify-center gap-2 px-6 py-3 font-lato font-semibold rounded-full border-2 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 dark:focus:ring-offset-black min-w-54 border-yellow-300 text-black hover:bg-yellow-300 hover:text-black focus:ring-yellow-300 dark:border-blue-600 dark:text-white dark:hover:bg-blue-600 dark:hover:text-white dark:focus:ring-blue-600 ${selectedEvent.id === event.id ? 'bg-yellow-300 text-black dark:bg-blue-600 dark:text-white' : 'bg-white dark:bg-black'}`}>
                             <event.Icon size={20}/>
                             <span>{event.title}</span>
                         </motion.button>
                     ))}
+
                     {/*Winter Button*/}
                     <motion.button
                         onClick={handleWinterButtonClick}

@@ -14,7 +14,7 @@ const useCountdown = (targetDate: Date): CountdownTuple => {
     useEffect(() => {
         const interval = setInterval(() => {
             setCountDown(countDownDate - new Date().getTime());
-        }, 1000);
+        }, 0);
         return () => clearInterval(interval);
     }, [countDownDate]);
 
