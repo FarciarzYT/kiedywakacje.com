@@ -67,31 +67,37 @@ export default function HeroButtons() {
 
                 </div>
                 {/*Winter Break Dropdown*/}
-                <AnimatePresence>
+                <AnimatePresence mode="sync">
                     {isWinterMenuOpen && (
                         <motion.div
-                            initial={{opacity: 0, height: 0}}
-                            animate={{opacity: 1, height: 'auto'}}
-                            exit={{opacity: 0, height: 0}}
-                            transition={{duration: 0.3}}
-                            className="flex flex-col gap-3 mt-4 w-full max-w-4xl font-lato min-h-[45vh]"
+                            initial={{ opacity: 0, scaleY: 0 }}
+                            animate={{ opacity: 1, scaleY: 1 }}
+                            exit={{ opacity: 0, scaleY: 0 }}
+                            transition={{
+                                duration: 0.2,
+                                ease: [0.25, 0.8, 0.25, 1]
+                            }}
+                            style={{ originY: 0 }}
+                            className="flex flex-col gap-3 mt-4 w-full max-w-4xl font-lato min-h-[45vh] overflow-hidden"
                         >
                             {winterBreakGroups.map((group) => (
-                                <motion.button
+                                <button
                                     title={group.id}
                                     key={group.id}
                                     onClick={() => handleWinterGroupSelect(group)}
-                                    whileHover={{scale: 1.02}}
-                                    className={`p-4 rounded-lg font-lato text-left transition-colors w-full ${selectedEvent.date.getTime() === group.date.getTime() ? 'bg-yellow-200 dark:bg-blue-800' : 'bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700'}`}
+                                    className={`p-4 rounded-lg font-lato text-left transition-colors w-full ${
+                                        selectedEvent.date.getTime() === group.date.getTime()
+                                            ? 'bg-yellow-200 dark:bg-blue-800'
+                                            : 'bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700'
+                                    }`}
                                 >
-                                    <div className="font-bold text-lg font-lato ">{group.title}</div>
+                                    <div className="font-bold text-lg font-lato">{group.title}</div>
                                     <div className="text-sm font-light font-Inter">{group.provinces}</div>
-                                </motion.button>
+                                </button>
                             ))}
                         </motion.div>
                     )}
                 </AnimatePresence>
-
             </div>
         </>
     )
