@@ -27,15 +27,15 @@ export default function HeroButtons() {
 
     return (
         <>
-            <div className="border-none rounded-lg px-8 py-6 text-center z-10 transition-all font-lato">
-                <p className="text-2xl font-medium text-black dark:text-gray-100 mb-2 text-outline select-none">
+            <div className="border-none rounded-lg px-2 py-1 text-center z-10 transition-all font-lato">
+                <p className="text-2xl font-medium text-black dark:text-gray-100 text-outline select-none">
                     Do {selectedEvent.label} pozostało
                 </p>
-                <span className="text-lg font-semibold dark:text-white mb-2 text-outline ">
+                <span className="text-lg font-semibold dark:text-white text-outline ">
                     <AlternateCountdown toDate={selectedEvent.date}/>
                 </span>
             </div>
-            <div className="mt-8 z-10 flex flex-col justify-center items-center gap-4 transition-all duration-100">
+            <div className="z-10 mt-2 flex flex-col justify-center items-center gap-4 transition-all duration-100">
                 <div className="flex flex-col justify-center items-center gap-4 lg:flex-row ">
                     {/*Summer Vibe Buttons*/}
                     {events.map((event) => (
@@ -67,18 +67,19 @@ export default function HeroButtons() {
 
                 </div>
                 {/*Winter Break Dropdown*/}
-                <AnimatePresence mode="sync">
+                <div className="w-full max-w-4xl min-h-[45vh]">
+                    <AnimatePresence mode="sync">
+
                     {isWinterMenuOpen && (
                         <motion.div
-                            initial={{ opacity: 0, scaleY: 0 }}
-                            animate={{ opacity: 1, scaleY: 1 }}
-                            exit={{ opacity: 0, scaleY: 0 }}
+                            initial={{ opacity: 0, height: 0 }}
+                            animate={{ opacity: 1, height: "auto" }}
+                            exit={{ opacity: 0, height: 0 }}
                             transition={{
                                 duration: 0.2,
                                 ease: [0.25, 0.8, 0.25, 1]
                             }}
-                            style={{ originY: 0 }}
-                            className="flex flex-col gap-3 mt-4 w-full max-w-4xl font-lato min-h-[45vh] overflow-hidden"
+                            className="flex flex-col gap-3 mt-4 w-full font-lato overflow-hidden"
                         >
                             {winterBreakGroups.map((group) => (
                                 <button
@@ -98,6 +99,7 @@ export default function HeroButtons() {
                         </motion.div>
                     )}
                 </AnimatePresence>
+                </div>
             </div>
         </>
     )
