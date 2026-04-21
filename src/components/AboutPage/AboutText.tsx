@@ -1,6 +1,6 @@
 "use client";
-import Icons from "@/components/AboutPage/Icons"
-import { motion,Variants } from 'framer-motion';
+import Icons from "@/components/AboutPage/Icons";
+import { motion, Variants } from "framer-motion";
 
 const containerVariants = {
     hidden: { opacity: 0 },
@@ -19,16 +19,12 @@ export const itemVariants: Variants = {
         opacity: 1,
         transition: {
             duration: 0.6,
-            ease: 'easeInOut',
+            ease: "easeInOut",
         },
     },
 };
 
 export default function AboutText() {
-
-
-
-
     return (
         <motion.div
             className="z-10 flex flex-col items-center gap-12 text-center font-Inter"
@@ -38,10 +34,10 @@ export default function AboutText() {
         >
             <motion.header variants={itemVariants}>
                 <h1 className="text-5xl font-semibold text-black dark:text-white text-outline">
-                    To nie jest licznik.
+                    Skąd się to wzięło?
                 </h1>
-                <h2 className="mt-2 text-2xl font-medium  text-black dark:text-white sm:text-5xl text-outline">
-                    To zegar egzekucji.
+                <h2 className="mt-2 text-2xl font-medium text-black dark:text-white sm:text-5xl text-outline">
+                    Z nudów. I z miłości do wakacji.
                 </h2>
             </motion.header>
 
@@ -49,18 +45,19 @@ export default function AboutText() {
                 className="flex max-w-lg flex-col gap-8 text-xl font-light text-black dark:text-white sm:text-2xl"
                 variants={itemVariants}
             >
-                <blockquote className="italic text-black dark:text-white text-outline max-w-7xl">
-                    Ludzie mają obsesję na punkcie „czekania na coś”.Wakacje, weekend, lepszy dzień. A co robisz dzisiaj? Czekasz na zbawienie?
+                <blockquote className="italic text-black dark:text-white max-w-7xl text-outline">
+                    &#34;Ile jeszcze do wakacji?&#34; - usłyszałem to pytanie setki razy.
+                    Od kolegów, od siebie samego, gdzieś w środku marca kiedy
+                    zima nie chce odpuścić.
                 </blockquote>
                 <p className="font-light text-black dark:text-white text-outline">
-                    Patrz na ten zegar codziennie.
+                    Zamiast za każdym razem liczyć w głowie,
                     <br />
-                    Nie po to, by się cieszyć.
-                    <br />
-                    Tylko po to, żeby poczuć presję.
+                    zrobiłem stronę. Dla siebie, a potem dla was.
                 </p>
             </motion.section>
-            <Icons/>
+
+            <Icons />
         </motion.div>
     );
 }
