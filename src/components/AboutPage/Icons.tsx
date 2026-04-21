@@ -1,8 +1,7 @@
 "use client";
 import { motion } from 'framer-motion';
-import { FaTiktok, FaInstagram ,FaGithub } from 'react-icons/fa';
 import {itemVariants} from "@/components/AboutPage/AboutText";
-import {FaLinkedin} from "react-icons/fa6";
+import {FaLinkedin,FaGithub } from "react-icons/fa6";
 
 export default function AboutText() {
 
