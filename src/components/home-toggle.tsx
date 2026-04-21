@@ -17,7 +17,7 @@ export function HomeToggle() {
             title="about page"
             variant="outline"
             size="icon"
-            className="rounded-full mt-4 absolute top-4 right-16 z-20 transition-all duration-300"
+            className="rounded-full mt-4 absolute top-4 right-16 z-20 transition-all duration-300 cursor-pointer"
             onClick={handleToggle}
         >
             {isHome ? (

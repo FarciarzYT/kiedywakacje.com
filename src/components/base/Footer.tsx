@@ -21,8 +21,8 @@ export default function Footer() {
     ];
 
     return (
-        <footer className="relative bg-yellow-50/50 dark:bg-zinc-900/50 border-t border-yellow-200 dark:border-blue-900 pt-2 justify-between items-center flex flex-row mt-32 overflow-hidden backdrop-blur-sm">
-            <h1 className="text-3xl font-black text-yellow-200 dark:text-blue-900 leading-none whitespace-nowrap hidden sm:block">
+        <footer className="relative bg-yellow-50/50 dark:bg-black border-t border-yellow-200 dark:border-blue-900 pt-2 justify-between items-center flex flex-row mt-32 overflow-hidden backdrop-blur-sm">
+            <h1 className="text-3xl font-black text-black/80 dark:text-white/80 leading-none whitespace-nowrap hidden sm:block">
                 Kiedy Wakacje?
             </h1>
             <div className="flex flex-row mx-6 gap-2">
@@ -36,8 +36,8 @@ export default function Footer() {
                         rel="noopener noreferrer"
                         aria-label={social.label}
                         className="rounded-xl transition-all duration-200 hover:scale-110
-                        text-yellow-400 hover:text-yellow-500
-                        dark:text-blue-400 dark:hover:text-blue-300"
+                        text-black/80 hover:text-yellow-500
+                        dark:text-white/80 dark:hover:text-blue-300"
                         >
                         <Icon size={22} />
                     </a>

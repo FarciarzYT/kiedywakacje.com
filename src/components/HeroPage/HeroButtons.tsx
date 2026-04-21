@@ -55,7 +55,7 @@ export default function HeroButtons() {
                 </Link>
 
             </div>
-            <div className="z-10 mt-2 flex flex-col justify-center items-center gap-4 transition-all duration-100">
+            <div className="z-10 mt-4 flex flex-col justify-center items-center gap-4 transition-all duration-100">
                 <div className="flex flex-col justify-center items-center gap-4 lg:flex-row ">
                     {/*Summer Vibe Buttons*/}
                     {events.map((event) => (
@@ -67,7 +67,7 @@ export default function HeroButtons() {
                             }}
                             whileHover={{scale: 1.05}}
                             whileTap={{scale: 0.95}}
-                            className={`flex items-center text-clip justify-center gap-2 px-6 py-3 font-lato font-semibold rounded-full border-2 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 dark:focus:ring-offset-black min-w-54 border-yellow-300 text-black hover:bg-yellow-300 hover:text-black focus:ring-yellow-300 dark:border-blue-600 dark:text-white dark:hover:bg-blue-600 dark:hover:text-white dark:focus:ring-blue-600 ${selectedEvent.id === event.id ? 'bg-yellow-300 text-black dark:bg-blue-600 dark:text-white' : 'bg-white dark:bg-black'}`}>
+                            className={`flex items-center text-clip justify-center gap-2 px-6 cursor-pointer py-3 font-lato font-semibold rounded-3xl border-2 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 dark:focus:ring-offset-black min-w-54 border-yellow-300 text-black hover:bg-yellow-300 hover:text-black focus:ring-yellow-300 dark:border-blue-600 dark:text-white dark:hover:bg-blue-600 dark:hover:text-white dark:focus:ring-blue-600 ${selectedEvent.id === event.id ? 'bg-yellow-300 text-black dark:bg-blue-600 dark:text-white' : 'bg-gray-100 dark:bg-gray-800  hover:bg-gray-200 dark:hover:bg-gray-700'}`}>
                             <event.Icon size={20}/>
                             <span>{event.title}</span>
                         </motion.button>
@@ -78,7 +78,7 @@ export default function HeroButtons() {
                         onClick={handleWinterButtonClick}
                         whileHover={{scale: 1.05}}
                         whileTap={{scale: 0.95}}
-                        className={`flex items-center justify-center gap-2 px-6 py-3 font-lato font-semibold rounded-full border-2 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 dark:focus:ring-offset-black min-w-54 border-yellow-300 text-black hover:bg-yellow-300 hover:text-black focus:ring-yellow-300 dark:border-blue-600 dark:text-white dark:hover:bg-blue-600 dark:hover:text-white dark:focus:ring-blue-600 ${isWinterSelected ? 'bg-yellow-300 text-black dark:bg-blue-600 dark:text-white' : 'bg-white dark:bg-black'}`}>
+                        className={`flex items-center justify-center cursor-pointer gap-2 px-6 py-3 font-lato font-semibold rounded-3xl border-2 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 dark:focus:ring-offset-black min-w-54 border-yellow-300 text-black hover:bg-yellow-300 hover:text-black focus:ring-yellow-300 dark:border-blue-600 dark:text-white dark:hover:bg-blue-600 dark:hover:text-white dark:focus:ring-blue-600 ${isWinterSelected ? 'bg-yellow-300 text-black dark:bg-blue-600 dark:text-white' : 'bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700'}`}>
                         <Snowflake size={20}/>
                         <span>Ferie Zimowe</span>
                         {isWinterMenuOpen ? <ChevronUp size={20}/> : <ChevronDown size={20}/>}
@@ -106,7 +106,7 @@ export default function HeroButtons() {
                                     title={group.id}
                                     key={group.id}
                                     onClick={() => handleWinterGroupSelect(group)}
-                                    className={`p-4 rounded-lg font-lato text-left transition-colors w-full ${
+                                    className={`p-4 rounded-lg font-lato text-left w-full cursor-pointer hover:translate-x-1 hover:-translate-y-1 transition-all duration-300 ${
                                         selectedEvent.date.getTime() === group.date.getTime()
                                             ? 'bg-yellow-200 dark:bg-blue-800'
                                             : 'bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700'
