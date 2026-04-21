@@ -51,7 +51,7 @@ export default function HeroButtons() {
                 >
                     <span>{selectedEvent.date.getDate()}.{selectedEvent.date.getMonth()}.{selectedEvent.date.getFullYear()} </span>
 
-                    <FaCalendarDays className="text-medium opacity-0 -translate-x-1 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all duration-150" />
+                    <FaCalendarDays className="text-medium transition-all duration-150" />
                 </Link>
 
             </div>
