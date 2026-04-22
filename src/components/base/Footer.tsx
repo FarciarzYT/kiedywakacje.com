@@ -23,8 +23,8 @@ export default function Footer() {
     ];
 
     return (
-        <footer className="relative bg-yellow-50/50 dark:bg-black border-t border-yellow-200 dark:border-blue-900 py-2 justify-between items-center flex flex-row mt-32 overflow-hidden backdrop-blur-sm">
-            <Link href="mailto:lider@kiedywakacje.com" className="text-3xl font-black sm:flex-row sm:flex gap-4 items-center text-black/80 dark:text-white/80 leading-none whitespace-nowrap hidden ">
+        <footer className="relative bg-yellow-50/50 dark:bg-black border-t border-yellow-200 dark:border-blue-900 py-2 justify-between items-center flex flex-row mt-16 overflow-hidden backdrop-blur-sm">
+            <Link href="mailto:lider@kiedywakacje.com" className="text-xl font-black sm:flex-row sm:flex gap-4 items-center text-black/80 dark:text-white/80 leading-none whitespace-nowrap hidden ">
                 Napisz do nas tutaj <MdOutgoingMail />
             </Link>
             <div className="flex flex-row mx-6 gap-2">

@@ -17,36 +17,24 @@ const faqs: FAQItem[] = [
     },
     {
         id: 2,
-        question: "Czy serwis jest bezpłatny?",
-        answer:
-            "Tak, kiedywakacje.com jest w pełni bezpłatny. Wejdź na stronę, wybierz interesujące Cię wydarzenie i sprawdzaj odliczanie bez żadnych opłat ani rejestracji.",
-    },
-    {
-        id: 3,
         question: "Do jakich dat można odliczać?",
         answer:
             "Odliczamy do wakacji letnich, ferii zimowych, Bożego Narodzenia, Wielkanocy, sylwestra, a także do egzaminów ósmoklasisty i matur. Lista wydarzeń jest aktualizowana co roku zgodnie z oficjalnym kalendarzem roku szkolnego MEN.",
     },
     {
-        id: 4,
+        id: 3,
         question: "Skąd pochodzą daty roku szkolnego?",
         answer:
             "Terminy wakacji i dni wolnych pobieramy z oficjalnego kalendarza roku szkolnego publikowanego przez Ministerstwo Edukacji Narodowej. Daty są aktualizowane niezwłocznie po ogłoszeniu nowego kalendarza.",
     },
     {
-        id: 5,
-        question: "Czy odliczanie uwzględnia moją strefę czasową?",
-        answer:
-            "Tak — odliczanie działa w czasie rzeczywistym i automatycznie dostosowuje się do strefy czasowej Twojego urządzenia, dzięki czemu licznik jest zawsze precyzyjny.",
-    },
-    {
-        id: 6,
+        id: 4,
         question: "Czy mogę dodać stronę do ekranu głównego telefonu?",
         answer:
             'Tak. W przeglądarce mobilnej (Chrome lub Safari) wybierz opcję „Dodaj do ekranu głównego". Dzięki temu kiedywakacje.com będzie dostępne jak zwykła aplikacja — jednym tapnięciem.',
     },
     {
-        id: 7,
+        id: 5,
         question: "Jak zgłosić błąd lub zaproponować nową funkcję?",
         answer:
             "Napisz do nas przez formularz kontaktowy dostępny w stopce strony. Czytamy każdą wiadomość i staramy się odpowiadać najszybciej jak to możliwe.",
@@ -58,7 +46,7 @@ export default function FAQPage() {
     const toggle = (id: number) => setOpenId(openId === id ? null : id)
 
     return (
-        <main className="min-h-screen px-6 py-16 text-black dark:text-white">
+        <section className="px-6 text-black dark:text-white">
             <div className="mx-auto max-w-2xl">
                 {/* Header */}
                 <div className="mb-12 text-center">
@@ -150,6 +138,6 @@ export default function FAQPage() {
                     </div>
                 </div>
             </div>
-        </main>
+        </section>
     )
 }
