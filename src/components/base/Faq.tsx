@@ -37,7 +37,7 @@ const faqs: FAQItem[] = [
         id: 5,
         question: "Jak zgłosić błąd lub zaproponować nową funkcję?",
         answer:
-            "Napisz do nas przez formularz kontaktowy dostępny w stopce strony. Czytamy każdą wiadomość i staramy się odpowiadać najszybciej jak to możliwe.",
+            "Napisz do nas przez mail dostępny w stopce strony. Czytamy każdą wiadomość i staramy się odpowiadać najszybciej jak to możliwe.",
     },
 ]
 
@@ -48,7 +48,6 @@ export default function FAQPage() {
     return (
         <section className="px-6 text-black dark:text-white">
             <div className="mx-auto max-w-2xl">
-                {/* Header */}
                 <div className="mb-12 text-center">
                     <h3 className="font-lato font-semibold text-4xl sm:text-5xl tracking-tight text-black dark:text-white">
                         FAQ
@@ -58,7 +57,6 @@ export default function FAQPage() {
                     </p>
                 </div>
 
-                {/* Accordion */}
                 <div
                     className="
                         relative rounded-3xl overflow-hidden
@@ -68,7 +66,6 @@ export default function FAQPage() {
                         px-2 py-2
                     "
                 >
-                    {/* corner accents */}
                     <span className="pointer-events-none absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-yellow-400 dark:border-blue-500 rounded-tl-3xl" />
                     <span className="pointer-events-none absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-yellow-400 dark:border-blue-500 rounded-br-3xl" />
 
@@ -87,7 +84,7 @@ export default function FAQPage() {
                                     <button
                                         onClick={() => toggle(faq.id)}
                                         aria-expanded={isOpen}
-                                        className="flex w-full items-start gap-4 px-5 py-4 text-left"
+                                        className="flex w-full items-start gap-4 px-5 py-4 text-left cursor-pointer"
                                     >
                                         <span className={`mt-0.5 min-w-5 text-xs font-semibold tabular-nums font-mono transition-colors duration-200 ${
                                             isOpen
@@ -96,7 +93,7 @@ export default function FAQPage() {
                                         }`}>
                                             {String(i + 1).padStart(2, "0")}
                                         </span>
-                                        <span className="flex-1 text-sm font-medium leading-snug text-zinc-800 dark:text-zinc-200">
+                                        <span className="flex-1 text-sm font-medium leading-snug font-lato text-zinc-800 dark:text-zinc-200 ">
                                             {faq.question}
                                         </span>
                                         <svg
@@ -125,7 +122,7 @@ export default function FAQPage() {
                                         }`}
                                     >
                                         {/* accent line left */}
-                                        <div className="mx-5 mb-4 flex gap-4">
+                                        <div className="mx-5 mb-4 flex gap-4 font-lato">
                                             <div className="w-px shrink-0 self-stretch bg-yellow-400 dark:bg-blue-500 rounded-full ml-[18px]" />
                                             <p className="text-sm leading-relaxed text-zinc-500 dark:text-zinc-400 pb-1">
                                                 {faq.answer}

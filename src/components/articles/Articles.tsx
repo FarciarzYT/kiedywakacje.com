@@ -7,7 +7,7 @@ export function Articles() {
     return (
         <>
             <section className="flex flex-col">
-                <h3 className={"text-4xl text-black dark:text-white text-outline mx-auto mb-8 font-semibold font-lato select-none"}>Co u nas słychać</h3>
+                <h3 className={"text-4xl text-black dark:text-white text-outline mx-auto mb-8 font-semibold font-lato select-none"}>Brak pomysłu na wakacje? sprawdź tu!</h3>
                 <div className={"flex flex-col sm:flex-row  justify-center max-w-5xl mx-auto gap-8 mb-16 px-4 select-none "}>
                 {articles.map((article) => (
 
