@@ -5,6 +5,7 @@ import { HomeToggle} from "@/components/home-toggle";
 import HeroText from "@/components/HeroPage/HeroText";
 import {Articles} from "@/components/articles/Articles"
 import AltFooter from "@/components/base/Footer";
+import FAQpage from "@/components/base/Faq";
 
 
 export default function HomePage() {
@@ -20,6 +21,7 @@ export default function HomePage() {
                 <HomeToggle/>
             </main>
             <Articles/>
+            <FAQpage/>
             <AltFooter/>
         </>
 

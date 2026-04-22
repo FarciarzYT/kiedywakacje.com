@@ -1,4 +1,6 @@
-import {FaXTwitter, FaGithub, FaLinkedin} from "react-icons/fa6";
+import {FaXTwitter, FaGithub, FaLinkedin, FaMailchimp} from "react-icons/fa6";
+import Link from "next/link";
+import { MdOutgoingMail } from "react-icons/md";
 
 
 export default function Footer() {
@@ -21,15 +23,15 @@ export default function Footer() {
     ];
 
     return (
-        <footer className="relative bg-yellow-50/50 dark:bg-black border-t border-yellow-200 dark:border-blue-900 pt-2 justify-between items-center flex flex-row mt-32 overflow-hidden backdrop-blur-sm">
-            <h4 className="text-3xl font-black text-black/80 dark:text-white/80 leading-none whitespace-nowrap hidden sm:block">
-                odliczanie do wakacji się nie zatrzymuje...
-            </h4>
+        <footer className="relative bg-yellow-50/50 dark:bg-black border-t border-yellow-200 dark:border-blue-900 py-2 justify-between items-center flex flex-row mt-32 overflow-hidden backdrop-blur-sm">
+            <Link href="mailto:lider@kiedywakacje.com" className="text-3xl font-black sm:flex-row sm:flex gap-4 items-center text-black/80 dark:text-white/80 leading-none whitespace-nowrap hidden ">
+                Napisz do nas tutaj <MdOutgoingMail />
+            </Link>
             <div className="flex flex-row mx-6 gap-2">
                 {socials.map((social) => {
                     const Icon = social.icon;
                     return (
-                    <a
+                    <Link
                         key={social.label}
                         href={social.href}
                         target="_blank"
@@ -40,7 +42,7 @@ export default function Footer() {
                         dark:text-white/80 dark:hover:text-blue-300"
                         >
                         <Icon size={22} />
-                    </a>
+                    </Link>
                     );
                 })}
             </div>
