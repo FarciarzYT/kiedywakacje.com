@@ -1,4 +1,4 @@
-import {FaXTwitter, FaGithub, FaLinkedin, FaMailchimp} from "react-icons/fa6";
+import {FaXTwitter, FaGithub, FaLinkedin} from "react-icons/fa6";
 import Link from "next/link";
 import { MdOutgoingMail } from "react-icons/md";
 
