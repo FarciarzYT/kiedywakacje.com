@@ -1,18 +1,30 @@
-import type { MetadataRoute } from 'next'
+import type { MetadataRoute } from 'next';
+import { eventPages } from '@/data/event-pages';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    return [
+    const now = new Date();
+
+    const staticRoutes: MetadataRoute.Sitemap = [
         {
             url: 'https://kiedywakacje.com',
-            lastModified: new Date(),
-            changeFrequency: 'yearly',
+            lastModified: now,
+            changeFrequency: 'weekly',
             priority: 1,
         },
         {
             url: 'https://kiedywakacje.com/about',
-            lastModified: new Date(),
+            lastModified: now,
             changeFrequency: 'yearly',
-            priority: 0.5,
+            priority: 0.4,
         },
-    ]
+    ];
+
+    const eventRoutes: MetadataRoute.Sitemap = eventPages.map(ep => ({
+        url: `https://kiedywakacje.com/${ep.slug}`,
+        lastModified: now,
+        changeFrequency: 'weekly' as const,
+        priority: 0.9,
+    }));
+
+    return [...staticRoutes, ...eventRoutes];
 }
