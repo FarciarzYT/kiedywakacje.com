@@ -44,11 +44,41 @@ export const metadata: Metadata = {
     },
 }
 
+const websiteJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'Kiedy Wakacje',
+    url: 'https://kiedywakacje.com',
+    description: 'Precyzyjne odliczanie do wakacji, ferii zimowych i innych dni wolnych od szkoły.',
+    inLanguage: 'pl',
+};
+
+const organizationJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'Kiedy Wakacje',
+    url: 'https://kiedywakacje.com',
+    contactPoint: {
+        '@type': 'ContactPoint',
+        email: 'lider@kiedywakacje.com',
+        contactType: 'customer support',
+        availableLanguage: 'Polish',
+    },
+};
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
         <html lang="pl" suppressHydrationWarning>
         <body className="dark:bg-black overflow-x-hidden">
         <ThemeProvider attribute="class" enableSystem defaultTheme="system">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+            />
             {children}
         </ThemeProvider>
         <Analytics />
