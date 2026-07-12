@@ -7,6 +7,7 @@ export type eventGroup = {
     label: string;
     endLabel: string;
     date: Date;
+    endDate?: Date;
     Icon: IconType;
     title: string;
 };
@@ -17,6 +18,7 @@ export const events:eventGroup[] = [
         label: 'wakacji',
         endLabel: 'końca wakacji',
         date: new Date('2026-06-27T00:00:00'),
+        endDate: new Date('2026-08-31T00:00:00'),
         Icon: TreePalm,
         title: 'Wakacje Letnie',
     },

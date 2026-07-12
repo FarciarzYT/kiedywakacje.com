@@ -27,6 +27,14 @@ export default function HeroButtons() {
     };
     const isWinterSelected = selectedEvent.id.startsWith('winter');
 
+    const now = new Date();
+    const isOngoing =
+        selectedEvent.endDate != null &&
+        now >= selectedEvent.date &&
+        now < selectedEvent.endDate;
+    const displayDate = isOngoing ? selectedEvent.endDate! : selectedEvent.date;
+    const displayLabel = isOngoing ? selectedEvent.endLabel : selectedEvent.label;
+
     const toGCalDate = (date: Date) => {
         return date.toISOString().replace(/-|:|\.\d{3}/g, "");
     };
@@ -35,17 +43,17 @@ export default function HeroButtons() {
     if (winterBreakGroups.some(event => event.title === selectedEvent.title)) title = "Ferie Zimowe";
     else title = encodeURIComponent(selectedEvent.title);
 
-    const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${toGCalDate(selectedEvent.date)}/${toGCalDate(selectedEvent.date)}&details=${encodeURIComponent(selectedEvent.label ?? "")}`;
+    const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${toGCalDate(displayDate)}/${toGCalDate(displayDate)}&details=${encodeURIComponent(selectedEvent.label ?? "")}`;
 
 
     return (
         <>
             <div className="border-none rounded-lg px-2 py-1 text-center z-10 transition-all font-lato">
                 <p className="text-2xl font-medium text-black dark:text-gray-100 text-outline select-none">
-                    Do {selectedEvent.label} pozostało
+                    Do {displayLabel} pozostało
                 </p>
                 <span className="text-lg font-semibold dark:text-white text-outline ">
-                    <AlternateCountdown toDate={selectedEvent.date}/>
+                    <AlternateCountdown toDate={displayDate}/>
                 </span>
 
                 <Link
@@ -53,7 +61,7 @@ export default function HeroButtons() {
                     target={"_blank"}
                     className="flex items-center mt-2 gap-1.5 mx-auto font-lato font-medium text-2xl dark:text-gray-100 text-outline text-black w-fit transition-colors duration-150 group/link"
                 >
-                    <span>{selectedEvent.date.getDate()}.{selectedEvent.date.getMonth()+1}.{selectedEvent.date.getFullYear()} </span>
+                    <span>{displayDate.getDate()}.{displayDate.getMonth()+1}.{displayDate.getFullYear()} </span>
 
                     <FaCalendarDays className="text-medium transition-all duration-150" />
                 </Link>
