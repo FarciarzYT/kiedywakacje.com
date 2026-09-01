@@ -6,7 +6,7 @@ import type { Metadata } from "next"
 
 export const metadata: Metadata = {
     metadataBase: new URL('https://kiedywakacje.com'),
-    title: 'Kiedy Wakacje? – Odliczanie do wakacji i ferii 2025/2026',
+    title: 'Kiedy Wakacje? – Odliczanie do wakacji i ferii 2026/2027',
     description: 'Nie możesz doczekać się wakacji? Sprawdź precyzyjne odliczanie do końca roku szkolnego, ferii zimowych i innych dni wolnych. Ile dni, godzin i minut zostało?',
     robots: {
         index: true,
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'Kiedy Wakacje? – Odliczanie do wakacji 2025/2026',
+        title: 'Kiedy Wakacje? – Odliczanie do wakacji 2026/2027',
         description: 'Precyzyjne odliczanie do wakacji letnich, ferii zimowych i końca roku szkolnego.',
         images: ['/og-image.png'],
     },
